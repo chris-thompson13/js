@@ -87,6 +87,18 @@ var color2 = "rgb("+r2+","+g2+","+b2+")";
 
 setInterval(updateGradient,10);
 
+function buttonVisible(){
+  var inputView = document.getElementById("editInput").value
+  var goButton = document.getElementById("go");
+
+  if (inputView !== ""){
+    goButton.style.visibility = 'visible';
+  } else {
+    goButton.style.visibility = 'hidden';
+
+  }
+}
+
 function check_User(){
   alert("test")
   var goButton = document.getElementById("go");
@@ -103,3 +115,49 @@ function validateForm() {
       alert("hello " + x)
     }
 }
+
+/* ------------------------------------ Click on login and Sign Up to  changue and view the effect
+---------------------------------------
+*/
+
+function cambiar_login() {
+  document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_login";
+document.querySelector('.cont_form_login').style.display = "block";
+document.querySelector('.cont_form_sign_up').style.opacity = "0";
+
+setTimeout(function(){  document.querySelector('.cont_form_login').style.opacity = "1"; },400);
+
+setTimeout(function(){
+document.querySelector('.cont_form_sign_up').style.display = "none";
+},200);
+  }
+
+function cambiar_sign_up(at) {
+  document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_sign_up";
+  document.querySelector('.cont_form_sign_up').style.display = "block";
+document.querySelector('.cont_form_login').style.opacity = "0";
+
+setTimeout(function(){  document.querySelector('.cont_form_sign_up').style.opacity = "1";
+},100);
+
+setTimeout(function(){   document.querySelector('.cont_form_login').style.display = "none";
+},400);
+
+
+}
+
+
+
+
+function ocultar_login_sign_up() {
+
+document.querySelector('.cont_forms').className = "cont_forms";
+document.querySelector('.cont_form_sign_up').style.opacity = "0";
+document.querySelector('.cont_form_login').style.opacity = "0";
+
+setTimeout(function(){
+document.querySelector('.cont_form_sign_up').style.display = "none";
+document.querySelector('.cont_form_login').style.display = "none";
+},500);
+
+  }
