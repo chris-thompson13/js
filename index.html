@@ -17,8 +17,9 @@
   <header>
   <nav class="nav-header">
     <div class="btn-group left">
-      <a href="index.html" class="btn">Home</a>
+      <a href="index.html" class="btn" id = "titleButton">rise</a>
     </div>
+
 
 
     <div class="btn-group right">
@@ -47,7 +48,7 @@
 <div class = "form1">
   <form name="myForm">
 
-  <input type = "text" class = "signUp" name= "name" placeholder="what's your name?">
+  <input type = "text" class = "signUp" onChange="check_user(this.value);"  name= "name" placeholder="what's your name?">
 
   <button onclick = "validateForm()" id = "go" class = "btn">Get Started</button>
 

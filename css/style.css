@@ -100,7 +100,20 @@ margin: 0px;
 }
 
 
+.hTitle{
+  font-family: verdana;
+  color: white;
+  display: inline-block;
+  text-align: center;
+  margin: auto;
 
+
+
+}
+
+#titleButton{
+  font-size: 50px
+}
 .btn {
   color: white;
   background-color: rgba(255, 255, 255, 0.0);
@@ -210,7 +223,7 @@ button.is-active:after {
 
 .right {
   float: right;
-  width: 300px;
+  width: 200px;
 }
 
 .btn-group {
@@ -229,4 +242,10 @@ font-size: 15px;
 .btn:hover {
   border: 15px solid rgb(65, 80, 104);
   border-radius: 300px;
+}
+
+@media screen and (max-width: 992px){
+  .signUp {
+    width: 100%
+  }
 }

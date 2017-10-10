@@ -87,6 +87,13 @@ var color2 = "rgb("+r2+","+g2+","+b2+")";
 
 setInterval(updateGradient,10);
 
+function check_User(){
+  alert("test")
+  var goButton = document.getElementById("go");
+  goButton.style.visibility = 'hidden';
+
+
+}
 function validateForm() {
     var x = document.forms["myForm"]["name"].value;
     if (x == "") {
