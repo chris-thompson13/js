@@ -6,7 +6,7 @@ function myFunction(){
 
 
 }
-
+var signUpWindow = false
 $('button').on('click', function() {
   $(this).toggleClass('is-active');
 
@@ -106,33 +106,39 @@ function check_User(){
 
 
 }
-function validateForm() {
-    var x = document.forms["myForm"]["name"].value;
-    if (x == "") {
-        alert("Name must be filled out");
-;
-    } else {
-      alert("hello " + x)
-    }
-}
+function cambiar_sign_up(){
+ if (signUpWindow == true) {
+   signUp1()
+ } else {
+   signUpWindow = true
+ }
 
 /* ------------------------------------ Click on login and Sign Up to  changue and view the effect
 ---------------------------------------
 */
-
+}
 function cambiar_login() {
   document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_login";
 document.querySelector('.cont_form_login').style.display = "block";
 document.querySelector('.cont_form_sign_up').style.opacity = "0";
 
 setTimeout(function(){  document.querySelector('.cont_form_login').style.opacity = "1"; },400);
+signUpWindow = false
 
 setTimeout(function(){
 document.querySelector('.cont_form_sign_up').style.display = "none";
 },200);
   }
 
+
+
 function cambiar_sign_up(at) {
+  if (signUpWindow == true){
+    signUp1();
+
+  }
+
+  signUpWindow = true
   document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_sign_up";
   document.querySelector('.cont_form_sign_up').style.display = "block";
 document.querySelector('.cont_form_login').style.opacity = "0";
@@ -145,9 +151,24 @@ setTimeout(function(){   document.querySelector('.cont_form_login').style.displa
 
 
 }
+function Person(username, email, password, confirm) {
+  this.username = username;
+  this.email =  email;
+  this.password = password;
+  this.confirm = confirm;
 
 
+}
+var users = []
+function signUp1(){
+  var newUser = new Person(document.getElementById('signUsername').value, document.getElementById('signEmail').value, document.getElementById('signPassword').value, document.getElementById('signConfirm').value);
+  console.log(newUser.username)
+  users.push(newUser)
+  for(var i=0;i<users.length;i++){
+    console.log(users[i])
+  }
 
+}
 
 function ocultar_login_sign_up() {
 
@@ -158,6 +179,7 @@ document.querySelector('.cont_form_login').style.opacity = "0";
 setTimeout(function(){
 document.querySelector('.cont_form_sign_up').style.display = "none";
 document.querySelector('.cont_form_login').style.display = "none";
+
 },500);
 
   }
